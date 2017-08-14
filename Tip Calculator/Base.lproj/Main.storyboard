@@ -86,7 +86,13 @@
                             <outletCollection property="gestureRecognizers" destination="IgD-GY-Lro" appends="YES" id="8jh-Pk-HLn"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tip Calculator" id="lCP-W1-w0w"/>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="lCP-W1-w0w">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="3i0-r1-nhS">
+                            <connections>
+                                <segue destination="d6S-bm-iYY" kind="push" id="VNK-YA-L52"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="c03-0W-yfp" id="jhz-se-qvb"/>
                         <outlet property="tipControl" destination="e1q-4t-x4C" id="tii-xh-wWh"/>
@@ -102,6 +108,48 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="537.5" y="154.5"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="cWB-Ze-aHW">
+            <objects>
+                <viewController id="d6S-bm-iYY" customClass="SettingsViewController" customModule="Tip_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jMH-iN-9TR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Default Tip Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SSw-9u-tZq">
+                                <rect key="frame" x="16" y="94" width="148" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="vcV-8S-Syl">
+                                <rect key="frame" x="16" y="123" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                    <segment title="25%"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xRR-92-fgG">
+                        <barButtonItem key="leftBarButtonItem" title="Tip Calculator" id="eba-Pg-tjc">
+                            <connections>
+                                <action selector="dismissSettingsView:" destination="d6S-bm-iYY" id="zeo-la-LmW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="defaultTipSelector" destination="vcV-8S-Syl" id="Zwg-AD-v5g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ov-nI-spF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1149" y="155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="x94-WJ-sRV">
